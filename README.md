@@ -7,6 +7,8 @@ transparent cutouts.
 TypeScript declarations, tree-shakeable ESM exports, CommonJS imports, and SVG
 refs are included. React 18 and 19 are supported; React is not bundled.
 
+See [CHANGELOG.md](CHANGELOG.md) for unreleased changes.
+
 ## Installation
 
 **Not yet published to npm.** Build a local package from this repository:

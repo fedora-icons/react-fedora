@@ -7,6 +7,8 @@ has not been published to npm.
 
 ### Changed
 
+- Synchronized the redrawn `thermometer`, `thermometer-cold`,
+  `thermometer-warm`, and `tool-crossed` icons in all four styles.
 - Synchronized connected image-family hill borders in all four styles and the
   transparent, two-stroke-color `head-profile` Duocolor correction.
 - Synchronized the verified core SVG snapshot: 1,252 icons in four styles,

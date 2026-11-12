@@ -7,26 +7,9 @@ transparent cutouts.
 TypeScript declarations, tree-shakeable ESM exports, CommonJS imports, and SVG
 refs are included. React 18 and 19 are supported; React is not bundled.
 
-See [CHANGELOG.md](CHANGELOG.md) for unreleased changes.
+See [CHANGELOG.md](CHANGELOG.md) for release notes.
 
 ## Installation
-
-**Not yet published to npm.** Build a local package from this repository:
-
-```sh
-git clone https://github.com/fedora-icons/react-fedora.git
-cd react-fedora
-npm ci
-npm pack
-```
-
-In your application:
-
-```sh
-npm install /absolute/path/to/react-fedora/fedora-icons-react-0.1.0.tgz
-```
-
-After the first npm release, the installation command will be:
 
 ```sh
 npm install @fedora-icons/react

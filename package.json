@@ -1,6 +1,6 @@
 {
   "name": "@fedora-icons/react",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Fedora's four-style SVG icon library as typed React components.",
   "license": "MIT",
   "type": "module",

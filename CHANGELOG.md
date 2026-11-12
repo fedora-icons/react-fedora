@@ -1,14 +1,24 @@
 # Changelog
 
-Changes are recorded under Unreleased until a release is tagged. This package
-has not been published to npm.
+Changes are recorded under Unreleased until a release is published to npm.
 
 ## Unreleased
+
+## 0.1.1 - 2026-11-12
 
 ### Changed
 
 - Synchronized the redrawn `thermometer`, `thermometer-cold`,
   `thermometer-warm`, and `tool-crossed` icons in all four styles.
+
+### Documentation
+
+- Replaced the local-tarball installation steps with `npm install @fedora-icons/react`.
+
+## 0.1.0
+
+### Changed
+
 - Synchronized connected image-family hill borders in all four styles and the
   transparent, two-stroke-color `head-profile` Duocolor correction.
 - Synchronized the verified core SVG snapshot: 1,252 icons in four styles,

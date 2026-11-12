@@ -7,6 +7,8 @@ has not been published to npm.
 
 ### Changed
 
+- Synchronized connected image-family hill borders in all four styles and the
+  transparent, two-stroke-color `head-profile` Duocolor correction.
 - Synchronized the verified core SVG snapshot: 1,252 icons in four styles,
   generating 5,008 React components.
 - Included the new currency, music, image-resolution, fuel-pump, pause, and

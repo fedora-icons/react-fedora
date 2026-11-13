@@ -4,6 +4,11 @@ Changes are recorded under Unreleased until a release is published to npm.
 
 ## Unreleased
 
+### Fixed
+
+- Synchronized Duotone `tool-crossed`, which now tints only the wrench and
+  screwdriver handle (fedora-icons@573481e).
+
 ## 0.1.1 - 2026-11-13
 
 ### Changed

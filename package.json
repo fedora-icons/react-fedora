@@ -1,6 +1,6 @@
 {
   "name": "@fedora-icons/react",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Fedora's four-style SVG icon library as typed React components.",
   "license": "MIT",
   "type": "module",
@@ -71,7 +71,11 @@
     },
     "./package.json": "./package.json"
   },
-  "files": ["dist", "LICENSE", "CHANGELOG.md"],
+  "files": [
+    "dist",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
   "scripts": {
     "sync": "node scripts/sync.mjs",
     "build": "node scripts/build.mjs",

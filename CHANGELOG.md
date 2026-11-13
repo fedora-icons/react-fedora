@@ -4,6 +4,8 @@ Changes are recorded under Unreleased until a release is published to npm.
 
 ## Unreleased
 
+## 0.1.2 - 2026-11-13
+
 ### Fixed
 
 - Synchronized Duotone `tool-crossed`, which now tints only the wrench and

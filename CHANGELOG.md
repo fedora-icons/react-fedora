@@ -4,7 +4,7 @@ Changes are recorded under Unreleased until a release is published to npm.
 
 ## Unreleased
 
-## 0.1.1 - 2026-11-12
+## 0.1.1 - 2026-11-13
 
 ### Changed
 

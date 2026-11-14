@@ -1,17 +1,17 @@
 import { createRef } from 'react';
-import { CameraRegular, type FedoraIcon, type IconProps } from '@fedora-icons/react';
-import Camera from '@fedora-icons/react/regular/camera';
-import { CameraDuotone } from '@fedora-icons/react/duotone';
+import { CameraRegular, type FosIcon, type IconProps } from '@fos-icons/react';
+import Camera from '@fos-icons/react/regular/camera';
+import { CameraDuotone } from '@fos-icons/react/duotone';
 
 const props: IconProps = {
   size: '1em',
   primaryColor: 'red',
   secondaryColor: 'blue',
   modifierColor: 'green',
-  style: { '--fedora-primary': 'purple', opacity: 0.8 },
+  style: { '--fos-primary': 'purple', opacity: 0.8 },
 };
 const ref = createRef<SVGSVGElement>();
-const component: FedoraIcon = Camera;
+const component: FosIcon = Camera;
 export const examples = <>
   <CameraRegular {...props} ref={ref} title="Take photo" onClick={event => event.currentTarget.focus()} />
   <CameraDuotone size={32} aria-label="Camera" />

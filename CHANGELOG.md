@@ -4,12 +4,26 @@ Changes are recorded under Unreleased until a release is published to npm.
 
 ## Unreleased
 
+### Breaking
+
+- Renamed the package to `@fos-icons/react` (Fos Icons, fosicons.com). It
+  replaces `@fedora-icons/react`, which is deprecated. Component names are
+  unchanged; update the import specifier.
+- The color variables are now `--fos-primary`, `--fos-secondary`, and
+  `--fos-modifier`, and generated definition IDs use the `fos-` prefix. CSS
+  that sets the previous `--fedora-*` variables must be renamed.
+
+### Changed
+
+- Synchronized the renamed core snapshot (fos-icons@729ea30). Geometry,
+  paints, and fallback colors are unchanged.
+
 ## 0.1.2 - 2026-11-13
 
 ### Fixed
 
 - Synchronized Duotone `tool-crossed`, which now tints only the wrench and
-  screwdriver handle (fedora-icons@573481e).
+  screwdriver handle (fos-icons@573481e).
 
 ## 0.1.1 - 2026-11-13
 
@@ -20,7 +34,7 @@ Changes are recorded under Unreleased until a release is published to npm.
 
 ### Documentation
 
-- Replaced the local-tarball installation steps with `npm install @fedora-icons/react`.
+- Replaced the local-tarball installation steps with `npm install @fos-icons/react`.
 
 ## 0.1.0
 

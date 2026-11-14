@@ -4,7 +4,7 @@ import { act, createElement, createRef, Fragment } from 'react';
 import { createRoot, hydrateRoot } from 'react-dom/client';
 import { renderToString } from 'react-dom/server';
 import { JSDOM } from 'jsdom';
-import { CameraRegular, CreditCardPlusRegular } from '@fedora-icons/react';
+import { CameraRegular, CreditCardPlusRegular } from '@fos-icons/react';
 
 async function withDocument(run) {
   const dom = new JSDOM('<!doctype html><div id="root"></div>', { pretendToBeVisual: true });

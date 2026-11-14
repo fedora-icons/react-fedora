@@ -1,6 +1,6 @@
-# React Fedora Icons
+# React Fos Icons
 
-Fedora Icons for React: an open-source SVG icon library in **Regular, Filled,
+Fos Icons for React: an open-source SVG icon library in **Regular, Filled,
 Duocolor, and Duotone**. Drawn on a 24 x 24 grid, with 1.25px line strokes and
 transparent cutouts.
 
@@ -12,13 +12,13 @@ See [CHANGELOG.md](CHANGELOG.md) for release notes.
 ## Installation
 
 ```sh
-npm install @fedora-icons/react
+npm install @fos-icons/react
 ```
 
 ## Usage
 
 ```tsx
-import { CameraRegular } from '@fedora-icons/react';
+import { CameraRegular } from '@fos-icons/react';
 
 export default function App() {
   return <CameraRegular color="currentColor" size={24} />;
@@ -28,7 +28,7 @@ export default function App() {
 For an icon-only button, give the button an accessible name:
 
 ```tsx
-import { CameraRegular } from '@fedora-icons/react';
+import { CameraRegular } from '@fos-icons/react';
 
 export function PhotoButton() {
   return (
@@ -47,7 +47,7 @@ import {
   CameraFilled,
   CameraDuocolor,
   CameraDuotone,
-} from '@fedora-icons/react';
+} from '@fos-icons/react';
 
 <CameraRegular />;
 <CameraFilled />;
@@ -65,12 +65,12 @@ Root ESM exports are tree-shakeable. Style and individual-icon entry points
 are also available, including matching TypeScript and CommonJS exports:
 
 ```tsx
-import { CameraFilled } from '@fedora-icons/react/filled';
-import Camera from '@fedora-icons/react/regular/camera';
+import { CameraFilled } from '@fos-icons/react/filled';
+import Camera from '@fos-icons/react/regular/camera';
 ```
 
 ```js
-const { CameraRegular } = require('@fedora-icons/react');
+const { CameraRegular } = require('@fos-icons/react');
 ```
 
 The components are client components that also support server rendering and
@@ -81,8 +81,8 @@ frameworks, their `'use client'` boundary is retained.
 
 ```tsx
 import { createRef } from 'react';
-import { CameraRegular, CameraDuocolor } from '@fedora-icons/react';
-import type { IconProps } from '@fedora-icons/react';
+import { CameraRegular, CameraDuocolor } from '@fos-icons/react';
+import type { IconProps } from '@fos-icons/react';
 
 const ref = createRef<SVGSVGElement>();
 const props: IconProps = { size: 32, color: 'currentColor' };
@@ -111,8 +111,8 @@ The existing CSS variables work on the SVG or an ancestor:
 ```tsx
 <CameraDuocolor
   style={{
-    '--fedora-primary': '#245B9E',
-    '--fedora-secondary': '#60A5FA',
+    '--fos-primary': '#245B9E',
+    '--fos-secondary': '#60A5FA',
   }}
 />;
 ```
@@ -143,7 +143,7 @@ take precedence over the generated title association. Caller-provided
 
 ## Source and development
 
-The canonical artwork lives in `fedora-icons/fedora-icons`; this repository
+The canonical artwork lives in `fos-icons/fos-icons`; this repository
 owns the React API, build, tests, and releases. Do not edit icon paths here.
 Figma-only changes are not included until their canonical SVGs are synchronized.
 
@@ -156,7 +156,7 @@ access.
 To synchronize a local core checkout and verify the package:
 
 ```sh
-npm run sync -- --source ../fedora-icons
+npm run sync -- --source ../fos-icons
 npm test
 npm pack
 ```
@@ -179,4 +179,4 @@ registry; existing named modifier icons are exported like every other icon.
 
 ## License
 
-MIT. The original Fedora Icons license is included in every package.
+MIT. The original Fos Icons license is included in every package.

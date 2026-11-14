@@ -28,7 +28,7 @@ function renderNode([tag, props, children], prefix, key) {
 }
 
 export function createIcon(name, rootProps, nodes) {
-  const Icon = forwardRef(function FedoraIcon(
+  const Icon = forwardRef(function FosIcon(
     {
       size = 24,
       color,
@@ -43,15 +43,15 @@ export function createIcon(name, rootProps, nodes) {
     },
     ref,
   ) {
-    const prefix = `fedora-${useId()}`;
+    const prefix = `fos-${useId()}`;
     const hasName = Boolean(title || props['aria-label'] || props['aria-labelledby']);
     const labelledBy = title && !props['aria-label'] && !props['aria-labelledby']
       ? titleId ?? `${prefix}-title`
       : props['aria-labelledby'];
     const mergedStyle = {
-      ...(primaryColor != null && { '--fedora-primary': primaryColor }),
-      ...(secondaryColor != null && { '--fedora-secondary': secondaryColor }),
-      ...(modifierColor != null && { '--fedora-modifier': modifierColor }),
+      ...(primaryColor != null && { '--fos-primary': primaryColor }),
+      ...(secondaryColor != null && { '--fos-secondary': secondaryColor }),
+      ...(modifierColor != null && { '--fos-modifier': modifierColor }),
       ...style,
     };
 

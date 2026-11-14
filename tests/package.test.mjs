@@ -9,7 +9,7 @@ import { fileURLToPath } from 'node:url';
 const packageRoot = fileURLToPath(new URL('../', import.meta.url));
 
 test('the packed npm artifact works independently for ESM, CommonJS, and TypeScript consumers', async () => {
-  const temporary = await mkdtemp(path.join(tmpdir(), 'fedora-react-consumer-'));
+  const temporary = await mkdtemp(path.join(tmpdir(), 'fos-react-consumer-'));
   try {
     const output = execFileSync('npm', [
       'pack', '--json', '--ignore-scripts', '--pack-destination', temporary,
@@ -19,7 +19,7 @@ test('the packed npm artifact works independently for ESM, CommonJS, and TypeScr
     assert.ok(packed.files.some(file => file.path === 'README.md'));
     assert.ok(packed.files.every(file => !/^(src|scripts|tests|node_modules)\//.test(file.path)));
     execFileSync('tar', ['-xzf', path.join(temporary, packed.filename), '-C', temporary]);
-    const scope = path.join(temporary, 'node_modules/@fedora-icons');
+    const scope = path.join(temporary, 'node_modules/@fos-icons');
     await mkdir(scope, { recursive: true });
     await rename(path.join(temporary, 'package'), path.join(scope, 'react'));
     for (const dependency of ['react', 'react-dom', '@types']) {
@@ -31,8 +31,8 @@ test('the packed npm artifact works independently for ESM, CommonJS, and TypeScr
       import assert from 'node:assert/strict';
       import { createElement } from 'react';
       import { renderToStaticMarkup } from 'react-dom/server';
-      import { CameraRegular } from '@fedora-icons/react';
-      import Camera from '@fedora-icons/react/regular/camera';
+      import { CameraRegular } from '@fos-icons/react';
+      import Camera from '@fos-icons/react/regular/camera';
       assert.equal(Camera, CameraRegular);
       assert.match(renderToStaticMarkup(createElement(Camera)), /viewBox="0 0 24 24"/);
     `);
@@ -40,8 +40,8 @@ test('the packed npm artifact works independently for ESM, CommonJS, and TypeScr
       const assert = require('node:assert/strict');
       const { createElement } = require('react');
       const { renderToStaticMarkup } = require('react-dom/server');
-      const { CameraFilled } = require('@fedora-icons/react/filled');
-      const Camera = require('@fedora-icons/react/filled/camera').default;
+      const { CameraFilled } = require('@fos-icons/react/filled');
+      const Camera = require('@fos-icons/react/filled/camera').default;
       assert.equal(Camera, CameraFilled);
       assert.match(renderToStaticMarkup(createElement(Camera)), /viewBox="0 0 24 24"/);
     `);
@@ -50,15 +50,15 @@ test('the packed npm artifact works independently for ESM, CommonJS, and TypeScr
     }
     await writeFile(path.join(temporary, 'consumer.tsx'), `
       import { createRef } from 'react';
-      import { CameraRegular, type IconProps } from '@fedora-icons/react';
-      import Camera from '@fedora-icons/react/regular/camera';
-      const props: IconProps = { size: 32, style: { '--fedora-primary': 'red' } };
+      import { CameraRegular, type IconProps } from '@fos-icons/react';
+      import Camera from '@fos-icons/react/regular/camera';
+      const props: IconProps = { size: 32, style: { '--fos-primary': 'red' } };
       const ref = createRef<SVGSVGElement>();
       export const example = <><CameraRegular {...props} ref={ref} /><Camera title="Camera" /></>;
     `);
     await writeFile(path.join(temporary, 'consumer.cts'), `
-      import icons = require('@fedora-icons/react');
-      import camera = require('@fedora-icons/react/duotone/camera');
+      import icons = require('@fos-icons/react');
+      import camera = require('@fos-icons/react/duotone/camera');
       import React = require('react');
       export const example = React.createElement(icons.CameraDuotone, { size: 32 });
       export const same: typeof icons.CameraDuotone = camera.default;

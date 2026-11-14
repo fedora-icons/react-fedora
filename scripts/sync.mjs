@@ -8,7 +8,7 @@ import { parseSvg } from './build.mjs';
 const packageRoot = fileURLToPath(new URL('../', import.meta.url));
 const args = process.argv.slice(2);
 if (args.length !== 2 || args[0] !== '--source') {
-  throw new Error('Usage: npm run sync -- --source /path/to/fedora-icons');
+  throw new Error('Usage: npm run sync -- --source /path/to/fos-icons');
 }
 const sourceRoot = path.resolve(args[1]);
 const rawManifest = await readFile(path.join(sourceRoot, 'manifest.json'), 'utf8');
@@ -49,7 +49,7 @@ const dirty = Boolean(execFileSync('git', ['status', '--porcelain', '--untracked
 await mkdir(path.join(packageRoot, 'source'), { recursive: true });
 await writeFile(path.join(packageRoot, 'source/icons.json'), snapshot);
 await writeFile(path.join(packageRoot, 'source/lock.json'), JSON.stringify({
-  repository: 'fedora-icons/fedora-icons',
+  repository: 'fos-icons/fos-icons',
   revision,
   dirty,
   manifestSha256: digest(rawManifest),

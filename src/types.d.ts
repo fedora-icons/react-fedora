@@ -6,9 +6,9 @@ import type {
 } from 'react';
 
 export interface IconStyle extends CSSProperties {
-  '--fedora-primary'?: string;
-  '--fedora-secondary'?: string;
-  '--fedora-modifier'?: string;
+  '--fos-primary'?: string;
+  '--fos-secondary'?: string;
+  '--fos-modifier'?: string;
 }
 
 export interface IconProps extends Omit<SVGProps<SVGSVGElement>, 'ref' | 'style'> {
@@ -21,6 +21,6 @@ export interface IconProps extends Omit<SVGProps<SVGSVGElement>, 'ref' | 'style'
   style?: IconStyle;
 }
 
-export type FedoraIcon = ForwardRefExoticComponent<
+export type FosIcon = ForwardRefExoticComponent<
   IconProps & RefAttributes<SVGSVGElement>
 >;

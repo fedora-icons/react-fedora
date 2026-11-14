@@ -112,8 +112,8 @@ export async function build() {
       for (const extension of ['ts', 'cts']) {
         const importExtension = extension === 'ts' ? 'js' : 'cjs';
         outputs.set(`dist/types/${style}/${icon.name}.d.${extension}`,
-          `import type { FedoraIcon } from '../types.${importExtension}';\n`
-          + `export declare const ${name}: FedoraIcon;\nexport default ${name};\n`);
+          `import type { FosIcon } from '../types.${importExtension}';\n`
+          + `export declare const ${name}: FosIcon;\nexport default ${name};\n`);
       }
       indexes[style].push({ canonical: icon.name, name });
     }
@@ -131,7 +131,7 @@ export async function build() {
     for (const extension of ['ts', 'cts']) {
       const importExtension = extension === 'ts' ? 'js' : 'cjs';
       outputs.set(`dist/types/${style}/index.d.${extension}`,
-        `export type { FedoraIcon, IconProps, IconStyle } from '../types.${importExtension}';\n`
+        `export type { FosIcon, IconProps, IconStyle } from '../types.${importExtension}';\n`
         + indexes[style].map(({ canonical, name }) =>
           `export { ${name} } from './${canonical}.${importExtension}';`).join('\n') + '\n');
       rootExports[extension].push(`export * from './${style}/index.${importExtension}';`);
@@ -146,7 +146,7 @@ export async function build() {
   for (const extension of ['ts', 'cts']) {
     const importExtension = extension === 'ts' ? 'js' : 'cjs';
     outputs.set(`dist/types/index.d.${extension}`,
-      `export type { FedoraIcon, IconProps, IconStyle } from './types.${importExtension}';\n`
+      `export type { FosIcon, IconProps, IconStyle } from './types.${importExtension}';\n`
       + rootExports[extension].join('\n') + '\n');
     outputs.set(`dist/types/types.d.${extension}`,
       await readFile(path.join(packageRoot, 'src/types.d.ts'), 'utf8'));

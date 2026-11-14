@@ -8,9 +8,9 @@ import { createElement, Fragment } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { DOMParser } from '@xmldom/xmldom';
 import { build as bundle } from 'esbuild';
-import * as icons from '@fedora-icons/react';
-import Camera from '@fedora-icons/react/regular/camera';
-import { CameraFilled } from '@fedora-icons/react/filled';
+import * as icons from '@fos-icons/react';
+import Camera from '@fos-icons/react/regular/camera';
+import { CameraFilled } from '@fos-icons/react/filled';
 import { componentName, parseSvg } from '../scripts/build.mjs';
 
 const require = createRequire(import.meta.url);
@@ -70,15 +70,15 @@ test('every component preserves the canonical SVG geometry, paints, and nested v
 test('root, style, per-icon, and CommonJS imports resolve consistently', () => {
   assert.equal(Camera, icons.CameraRegular);
   assert.equal(CameraFilled, icons.CameraFilled);
-  const common = require('@fedora-icons/react');
+  const common = require('@fos-icons/react');
   assert.deepEqual(Object.keys(common).sort(), Object.keys(icons).sort());
   assert.equal(
     renderToStaticMarkup(createElement(common.CameraRegular)),
     renderToStaticMarkup(createElement(Camera)),
   );
   assert.equal(
-    require('@fedora-icons/react/regular/camera').default,
-    require('@fedora-icons/react/regular').CameraRegular,
+    require('@fos-icons/react/regular/camera').default,
+    require('@fos-icons/react/regular').CameraRegular,
   );
 });
 
@@ -141,7 +141,7 @@ test('size, SVG props, color roles, and style overrides reach the SVG', () => {
     modifierColor: 'green',
     className: 'example',
     'data-testid': 'icon',
-    style: { '--fedora-secondary': 'pink', opacity: 0.5 },
+    style: { '--fos-secondary': 'pink', opacity: 0.5 },
   })));
   assert.equal(svg.getAttribute('width'), '40');
   assert.equal(svg.getAttribute('height'), '2em');
@@ -149,9 +149,9 @@ test('size, SVG props, color roles, and style overrides reach the SVG', () => {
   assert.equal(svg.getAttribute('color'), 'purple');
   assert.equal(svg.getAttribute('class'), 'example');
   assert.equal(svg.getAttribute('data-testid'), 'icon');
-  assert.match(svg.getAttribute('style'), /--fedora-primary:red/);
-  assert.match(svg.getAttribute('style'), /--fedora-secondary:pink/);
-  assert.match(svg.getAttribute('style'), /--fedora-modifier:green/);
+  assert.match(svg.getAttribute('style'), /--fos-primary:red/);
+  assert.match(svg.getAttribute('style'), /--fos-secondary:pink/);
+  assert.match(svg.getAttribute('style'), /--fos-modifier:green/);
   assert.match(svg.getAttribute('style'), /opacity:0.5/);
   const primary = parse(renderToStaticMarkup(createElement(Camera, { primaryColor: 'teal' })));
   assert.equal(primary.getAttribute('color'), 'teal');
@@ -160,7 +160,7 @@ test('size, SVG props, color roles, and style overrides reach the SVG', () => {
 test('root named imports tree-shake down to the requested icon and shared runtime', async () => {
   const result = await bundle({
     stdin: {
-      contents: "export { CameraRegular } from '@fedora-icons/react';",
+      contents: "export { CameraRegular } from '@fos-icons/react';",
       resolveDir: packageRoot,
     },
     bundle: true,

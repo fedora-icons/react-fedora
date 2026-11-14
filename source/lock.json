@@ -1,7 +1,7 @@
 {
-  "repository": "fedora-icons/fedora-icons",
-  "revision": "573481e020959e0386ff9f659423359f65a2ec97",
+  "repository": "fos-icons/fos-icons",
+  "revision": "729ea30ea624f4427c98ec291cd5e10894053076",
   "dirty": false,
-  "manifestSha256": "568fb7cc831aeacbf807b59936b36caaa1487f4e5901f296e5f599b92bcd7611",
-  "snapshotSha256": "e52500d638288429f66321b5178abf922398c8d1c58e567bbe654a4bf3202eed"
+  "manifestSha256": "3a5f8c9a01dff6541e672e2804394d6d7173bcc4ec2218f718dfd817dd5f6f20",
+  "snapshotSha256": "6fe5fd11177ca1c9d798aca7a2e8252f2ce9c0e4a26c51b2d600cc78a36f4fd4"
 }

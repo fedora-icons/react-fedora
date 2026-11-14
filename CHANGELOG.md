@@ -4,6 +4,8 @@ Changes are recorded under Unreleased until a release is published to npm.
 
 ## Unreleased
 
+## 0.2.0 - 2026-11-14
+
 ### Breaking
 
 - Renamed the package to `@fos-icons/react` (Fos Icons, fosicons.com). It

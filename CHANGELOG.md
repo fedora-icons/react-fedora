@@ -14,6 +14,7 @@ Changes are recorded under Unreleased until a release is published to npm.
 - The color variables are now `--fos-primary`, `--fos-secondary`, and
   `--fos-modifier`, and generated definition IDs use the `fos-` prefix. CSS
   that sets the previous `--fedora-*` variables must be renamed.
+- The exported component type `FedoraIcon` is now `FosIcon`.
 
 ### Changed
 
